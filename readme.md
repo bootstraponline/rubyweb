@@ -1,4 +1,4 @@
-#### web_console [![Gem Version](https://badge.fury.io/rb/web_console.png)](http://rubygems.org/gems/web_console)[![Dependency Status](https://gemnasium.com/bootstraponline/rubyweb)](https://gemnasium.com/bootstraponline/rubyweb)
+#### web_console [![Gem Version](https://badge.fury.io/rb/web_console.png)](http://rubygems.org/gems/web_console)[![Dependency Status](https://gemnasium.com/bootstraponline/rubyweb.png)](https://gemnasium.com/bootstraponline/rubyweb)
 
 - [web_console on RubyGems](https://rubygems.org/gems/appium_console)
 
