@@ -27,6 +27,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'pry', '= 0.9.12.4'
   s.add_runtime_dependency 'spec', '~> 5.0.19'
   s.add_development_dependency 'rake', '~> 10.1.0'
+  # posix-spawn is used in the Rakefile to interface with git
+  s.add_development_dependency 'posix-spawn', '~> 0.3.8'
 
   s.executables   = [ 'rubyweb' ]
   s.files = `git ls-files`.split "\n"
