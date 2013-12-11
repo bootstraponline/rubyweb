@@ -15,6 +15,11 @@ gem update --system ;\
 gem update bundler
 ```
 
+#### se-builder
+
+- [Firefox ESR 24.2.0 OS X](https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/24.2.0esr/mac/en-US/Firefox%2024.2.0esr.dmg)
+- [se-builder XPI](http://www.saucelabs.com/addons/selenium-builder-latest.xpi)
+
 #### Install / Upgrade Ruby Console
 
 ```bash
