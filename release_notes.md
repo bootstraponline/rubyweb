@@ -1,3 +1,9 @@
+#### v0.5.11 2013-12-11
+
+- [af5a16e](https://github.com/appium/web_console/commit/af5a16e16f40ff619d4e641b555f30f13f3d4af0) Release 0.5.11
+- [4420f0e](https://github.com/appium/web_console/commit/4420f0e0355ce51940e80e32e6b5790f6a09f3ab) Update default pry printer
+
+
 #### v0.5.10 2013-12-11
 
 - [e94884c](https://github.com/appium/web_console/commit/e94884c77e44742182c32ec01fd444297221d92d) Release 0.5.10
