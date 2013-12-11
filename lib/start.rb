@@ -76,7 +76,7 @@ set_wait 0
 # default print code from https://github.com/pry/pry/blob/master/lib/pry.rb
 # pry-0.9.12.3
 Pry.config.print = proc do |output, value|
-  unless value.nil? || value.inspect.to_s.include?('SeleniumWebDriver::PageObject')
+  unless value.nil? || (value.class == Module && value.to_s.start_with?('Pages::'))
     Pry::output_with_default_format(output, value, :hashrocket => true)
   end
 end
