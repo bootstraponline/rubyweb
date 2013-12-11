@@ -23,11 +23,10 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/bootstraponline/web_console'
   s.require_paths = [ 'lib' ]
 
-  s.add_runtime_dependency 'page-object', '~> 0.9.4'
+  s.add_runtime_dependency 'selenium-webdriver', '~> 2.38.0'
   s.add_runtime_dependency 'pry', '= 0.9.12.3'
   s.add_runtime_dependency 'spec', '~> 5.0.19'
   s.add_development_dependency 'rake', '~> 10.1.0'
-  s.add_development_dependency 'posix/spawn', '~> 0.3.6'
 
   s.executables   = [ 'rubyweb' ]
   s.files = `git ls-files`.split "\n"

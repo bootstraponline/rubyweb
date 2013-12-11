@@ -2,7 +2,6 @@
 require 'rubygems'
 require 'spec' # https://github.com/bootstraponline/spec
 require 'selenium-webdriver'
-require 'page-object' # https://github.com/cheezy/page-object
 
 $driver = Selenium::WebDriver.for :firefox
 $driver.manage.timeouts.implicit_wait = 30 # seconds
