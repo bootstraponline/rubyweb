@@ -1,3 +1,11 @@
+#### v0.5.10 2013-12-11
+
+- [e94884c](https://github.com/appium/web_console/commit/e94884c77e44742182c32ec01fd444297221d92d) Release 0.5.10
+- [2329ad1](https://github.com/appium/web_console/commit/2329ad15d6409a71e6d61dde5173d67b48239770) Fix rakefile
+- [626d57a](https://github.com/appium/web_console/commit/626d57ab88613445af7d7754aa3cc7996a6b1398) Update pry gem
+- [15b439d](https://github.com/appium/web_console/commit/15b439dc616c8159487d1268ecc64319efc38da1) Update readme.md
+
+
 #### v0.5.9 2013-12-11
 
 - [f4c4eef](https://github.com/appium/web_console/commit/f4c4eef2befc6e7749d860b279887d8e058ac8f1) Release 0.5.9
