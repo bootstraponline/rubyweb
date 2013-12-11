@@ -22,7 +22,6 @@ module Pages; end
 # Pages module is hard coded.
 def promote_page_object_methods
   ::Pages.constants.each do |class_name|
-    puts "Promoting class_name as method #{class_name.to_s.downcase}"
     Kernel.send(:define_method, class_name.to_s.downcase) do
       Pages.const_get(class_name)
     end
