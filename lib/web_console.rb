@@ -7,7 +7,7 @@ require 'awesome_print'
 module Appium; end unless defined? Appium
 
 def define_reload paths
-  Pry.send(:define_singleton_method, :reload) do
+  Pry.send(:define_singleton_method, :_reload) do
     paths.each do |p|
       # If a page obj is deleted then load will error.
       begin
@@ -47,6 +47,9 @@ module Appium::Console
     end.flatten.compact # remove nested arrays & nils
 
     define_reload to_require
+  else
+    puts "This folder doesn't contain an appium.txt listing page objects"
+    exit
   end
 
   $stdout.puts "pry #{cmd.join(' ')}"

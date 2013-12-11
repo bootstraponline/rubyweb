@@ -4,8 +4,8 @@ require 'spec' # https://github.com/bootstraponline/spec
 require 'selenium-webdriver'
 require 'page-object' # https://github.com/cheezy/page-object
 
-$browser = Selenium::WebDriver.for :firefox
-$browser.manage.timeouts.implicit_wait = 30 # seconds
+$driver = Selenium::WebDriver.for :firefox
+$driver.manage.timeouts.implicit_wait = 30 # seconds
 
 # Load minitest
 begin
@@ -19,45 +19,39 @@ end
 
 module Pages; end
 
-## Pages module is hard coded.
+# Promote methods to top level for Pry
+# Pages module is hard coded.
 def promote_page_object_methods
-  # load in page object methods
-  # Expose all classes under the Pages module to minitest
   ::Pages.constants.each do |class_name|
-    define_singleton_method class_name.to_s.downcase do
-      ivar = "@#{class_name}"
-      instance_var = instance_variable_get ivar
-      if instance_var
-        instance_var
-      else
-        instance_variable_set ivar, Pages.const_get(class_name).new($browser)
-      end
+    puts "Promoting class_name as method #{class_name.to_s.downcase}"
+    Kernel.send(:define_method, class_name.to_s.downcase) do
+      Pages.const_get(class_name)
     end
   end
 end
 
 def reload
-  Pry.reload
+  Pry.send :_reload
   promote_page_object_methods
   nil
 end
 
 def set_wait seconds
-  $browser.manage.timeouts.implicit_wait = seconds
+  $driver.manage.timeouts.implicit_wait = seconds
 end
 
 # -- helper methods
 module Kernel
   def id id
-    $browser.find_elements(:id, id).detect { |ele| ele.displayed? }
+    $driver.find_elements(:id, id).detect { |ele| ele.displayed? }
   end
 
   def css css
-    $browser.find_elements(:css, css).detect { |ele| ele.displayed? }
+    $driver.find_elements(:css, css).detect { |ele| ele.displayed? }
   end
 
   def xpath xpath
-    $browser.find_elements(:xpath, xpath).detect { |ele| ele.displayed? }
+    $driver.find_elements(:xpath, xpath).detect { |ele| ele.displayed? }
   end
 
   def link text
@@ -71,7 +65,7 @@ end
 # --
 
 def x
-  $browser.quit if $browser
+  $driver.quit if $driver
   exit
 end
 
@@ -92,7 +86,7 @@ end
 # loop through all pages and output the methods
 def page
   Pages.constants.each do |page|
-    methods = Pages.const_get(page).instance_methods.sort - Object.instance_methods.sort
+    methods = Pages.const_get(page).singleton_methods
     methods.each { |m| puts "#{page.to_s.downcase}.#{m}" }
   end
   nil
