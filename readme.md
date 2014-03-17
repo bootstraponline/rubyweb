@@ -26,6 +26,7 @@ gem update bundler
 gem uninstall -aIx web_console ;\
 gem uninstall -aIx web_console ;\
 gem install --no-rdoc --no-ri web_console
+```
 
 `$ ./reset.sh`
 
